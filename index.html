@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f1419 100%);
+            background-attachment: fixed;
+        }
+        
+        header {
+            background: rgba(10, 14, 39, 0.8);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(100, 120, 180, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        nav {
+            background: rgba(15, 20, 40, 0.9);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(100, 120, 180, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #888;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background: rgba(15, 20, 40, 0.6);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(100, 120, 180, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(100, 120, 180, 0.3);
+            padding-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .project {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 2px solid rgba(100, 120, 180, 0.4);
+            background: rgba(10, 14, 39, 0.4);
+        }
+        
+        .project.no-image {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .project-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid rgba(100, 120, 180, 0.3);
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        .project-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: rgba(20, 30, 60, 0.5);
+            border: 1px dashed rgba(100, 120, 180, 0.4);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid rgba(100, 120, 180, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .profile-text {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background: rgba(30, 40, 80, 0.6);
+            color: #ffffff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(100, 120, 180, 0.3);
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(100, 120, 180, 0.4);
+            transition: border-color 0.3s;
+        }
+        
+        .contact-links a:hover {
+            border-bottom-color: rgba(150, 170, 220, 0.8);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            background: rgba(15, 20, 40, 0.6);
+            margin-top: 2rem;
+            border-top: 1px solid rgba(100, 120, 180, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daisuke Yamada</h1>
+        <p>PhD in CS at UW-Madison</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="cv.pdf" target="_blank">CV</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="profile-section">
+                <img src="profile.jpg" alt="Daisuke Yamada" class="profile-image">
+                <div class="profile-text">
+                    <p>
+                        I'm a third-year PhD student in Computer Science at the University of Wisconsin-Madison, working with <a href="https://www.biostat.wisc.edu/~vsingh/" target="_blank" style="color: #a0b0ff; text-decoration: none; border-bottom: 1px solid rgba(160, 176, 255, 0.3);">Professor Vikas Singh</a>. I graduated from Carleton College in 2023 with degrees in Mathematics and Computer Science. I also studied abroad at DIS Copenhagen and Budapest Semesters in Mathematics.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        My research is in machine learning and aims to develop mathematical foundations for building more efficient and reliable AI systems. I'm interested in understanding the compositional structure of neural networks and ensuring they behave predictably in real-world settings.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        I'm originally from Japan. Outside of research, I recently started learning piano and am enjoying the learning process.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="research">
+            <h2>Research Projects</h2>
+            
+            <div class="project">
+                <h3>Composing Linear Layers from Irreducibles</h3>
+                <p class="project-meta">NeurIPS 2025 | with Travis Pence and Vikas Singh</p>
+                <img src="clifford.jpg" alt="Clifford Algebra Decomposition" class="project-image">
+                <div class="project-content">
+                    <p>
+                        We introduce a Clifford algebra-based decomposition of linear layers into geometric primitives with a differentiable algorithm. Applied to LLM attention projections, the method reduces parameter counts from O(d²) to O(log²d) while maintaining baseline accuracy and perplexity.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Adaptive Scoring and Thresholding with Human Feedback for Robust OOD Detection</h3>
+                <p class="project-meta">Under Review at TMLR 2025 | with Harit Vishwakarma and Ramya Korlakai Vinayak</p>
+                <img src="ood.jpg" alt="OOD Detection Framework" class="project-image">
+                <div class="project-content">
+                    <p>
+                        We develop a mathematically grounded OOD framework for adaptively updating scoring functions and thresholds with human feedback while maintaining false positive control. The framework provides mechanisms for adapting to OOD inputs under dynamic conditions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project no-image">
+                <h3>Is Conformal Factuality Robust to Distractors?</h3>
+                <p class="project-meta">Spring 2025 | with Reid Chen, Harit Vishwakarma, and Ramya Korlakai Vinayak</p>
+                <div class="project-content">
+                    <p>
+                        We investigate the robustness of conformal prediction-based guarantees for LLM factuality under realistic distribution shifts. We demonstrate that these guarantees can break down in the presence of distractors, highlighting reliability challenges in AI systems.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project no-image">
+                <h3>Image-Adaptive Generative Adversarial Networks</h3>
+                <p class="project-meta">Fall 2022 | Carleton College, advised by Professor Anna Rafferty</p>
+                <div class="project-content">
+                    <p>
+                        We replicate <a href="https://arxiv.org/abs/1906.05284" target="_blank" style="color: #a0b0ff; text-decoration: none; border-bottom: 1px solid rgba(160, 176, 255, 0.3);">Image-Adaptive GANs</a> for image reconstruction tasks and build generative models capable of accurately estimating compressed or degraded images with high confidence. We analyze the model performances against images with different facial features to identify biases. This project was done as part of my undergraduate thesis at Carleton.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project no-image">
+                <h3>Selecting Balls From Urns With Partial Replacement Rules</h3>
+                <p class="project-meta">PUMP Journal of Undergraduate Research 2024 | Polymath Jr. REU Summer 2021</p>
+                <div class="project-content">
+                    <p>
+                        We investigate the "preferential" distribution X(0,1) in combinatorial probability. We explore open questions regarding the distribution including density, expectation, and variance properties.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact & Links</h2>
+            <div class="contact-links">
+                <a href="mailto:dyamada2@wisc.edu">Email</a>
+                <a href="https://github.com/Daisuke0713" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/yourprofile" target="_blank">Google Scholar</a>
+            </div>
+            <p style="margin-top: 1rem;">
+                Feel free to reach out - I'm always happy to chat about research or potential collaborations!
+            </p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Daisuke Yamada. All rights reserved.</p>
+    </footer>
+</body>
+</html>
