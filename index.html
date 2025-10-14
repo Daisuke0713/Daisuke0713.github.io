@@ -84,7 +84,7 @@
         }
         
         h2 {
-            color: #ffffff;
+            color: #b8c5ff;
             margin-bottom: 1.25rem;
             font-size: 1.3rem;
             border-bottom: 1px solid rgba(100, 120, 180, 0.2);
@@ -110,10 +110,35 @@
         }
         
         .project h3 {
-            color: #ffffff;
+            color: #d4dcff;
             margin-bottom: 0.5rem;
             font-weight: 500;
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .project-links {
+            display: inline-flex;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+        }
+        
+        .project-links a {
+            color: #a0b0ff;
+            text-decoration: none;
+            border: 1px solid rgba(160, 176, 255, 0.3);
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .project-links a:hover {
+            background: rgba(160, 176, 255, 0.1);
+            border-color: rgba(160, 176, 255, 0.5);
         }
         
         .project-meta {
@@ -298,7 +323,13 @@
             <h2>Research Projects</h2>
             
             <div class="project">
-                <h3>Composing Linear Layers from Irreducibles</h3>
+                <h3>
+                    <span>Composing Linear Layers from Irreducibles</span>
+                    <span class="project-links">
+                        <a href="https://arxiv.org/pdf/2507.11688" target="_blank">arXiv</a>
+                        <a href="https://neurips.cc/virtual/2025/poster/115082" target="_blank">NeurIPS</a>
+                    </span>
+                </h3>
                 <p class="project-meta">NeurIPS 2025 | with Travis Pence and Vikas Singh</p>
                 <img src="clifford.jpg" alt="Clifford Algebra Decomposition" class="project-image">
                 <div class="project-content">
@@ -309,7 +340,12 @@
             </div>
             
             <div class="project">
-                <h3>Adaptive Scoring and Thresholding with Human Feedback for Robust OOD Detection</h3>
+                <h3>
+                    <span>Adaptive Scoring and Thresholding for Robust OOD Detection</span>
+                    <span class="project-links">
+                        <a href="https://arxiv.org/pdf/2505.02299" target="_blank">arXiv</a>
+                    </span>
+                </h3>
                 <p class="project-meta">Under Review at TMLR 2025 | with Harit Vishwakarma and Ramya Korlakai Vinayak</p>
                 <img src="ood.jpg" alt="OOD Detection Framework" class="project-image">
                 <div class="project-content">
@@ -320,7 +356,9 @@
             </div>
             
             <div class="project no-image">
-                <h3>Is Conformal Factuality Robust to Distractors?</h3>
+                <h3>
+                    <span>Is Conformal Factuality Robust to Distractors?</span>
+                </h3>
                 <p class="project-meta">Spring 2025 | with Reid Chen, Harit Vishwakarma, and Ramya Korlakai Vinayak</p>
                 <div class="project-content">
                     <p>
@@ -330,7 +368,12 @@
             </div>
             
             <div class="project no-image">
-                <h3>Image-Adaptive Generative Adversarial Networks</h3>
+                <h3>
+                    <span>Image-Adaptive Generative Adversarial Networks</span>
+                    <span class="project-links">
+                        <a href="gan_thesis.pdf" target="_blank">PDF</a>
+                    </span>
+                </h3>
                 <p class="project-meta">Fall 2022 | Carleton College, advised by Professor Anna Rafferty</p>
                 <div class="project-content">
                     <p>
@@ -340,7 +383,12 @@
             </div>
             
             <div class="project no-image">
-                <h3>Selecting Balls From Urns With Partial Replacement Rules</h3>
+                <h3>
+                    <span>Selecting Balls From Urns With Partial Replacement Rules</span>
+                    <span class="project-links">
+                        <a href="https://journals.calstate.edu/pump/article/view/4251" target="_blank">Paper</a>
+                    </span>
+                </h3>
                 <p class="project-meta">PUMP Journal of Undergraduate Research 2024 | Polymath Jr. REU Summer 2021</p>
                 <div class="project-content">
                     <p>
