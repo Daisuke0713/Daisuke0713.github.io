@@ -1,1 +1,0 @@
-# Daisuke0713.github.io
