@@ -78,12 +78,14 @@
         /* Pubs */
         .year { font-size: 0.9rem; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; margin: 2.4rem 0 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--rule); }
         .year:first-child { margin-top: 2.5rem; }
-        .pub { display: grid; grid-template-columns: 160px 1fr; gap: 0 0.5rem; margin: 1.15rem 0; align-items: baseline; }
-        .pub-title { font-size: 1.08rem; font-weight: 500; }
+        .pub { margin: 1.15rem 0; }
+        .pub .venue { display: block; width: fit-content; margin-bottom: 0.35rem; }
+        .pub-title { font-size: 1.08rem; font-weight: 500; line-height: 1.25; }
         .pub-links { font-size: 0.9rem; }
         .pub-links a { color: var(--muted); margin-left: 0.5rem; }
-        .pub-line { font-size: 0.95rem; color: var(--muted); margin-top: 0.25rem; }
+        .pub-line { font-size: 0.95rem; color: var(--muted); margin-top: 0.1rem; line-height: 1.4; }
         .pub-line strong { color: var(--ink); font-weight: 600; }
+        .pub-venue { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-top: 0.1rem; line-height: 1.4; }
         .venue { display: inline-block; font-size: 0.72rem; line-height: 1.5; padding: 0.05rem 0.45rem; border: 1px solid var(--rule); border-radius: 5px; color: var(--ink); background: #f6f6f6; white-space: nowrap; }
 
         @media (max-width: 600px) {
@@ -91,7 +93,6 @@
             .intro { flex-direction: column; align-items: center; text-align: left; }
             .intro img { width: 160px; height: auto; }
             .name { font-size: 1.7rem; }
-            .pub { grid-template-columns: 1fr; gap: 0.3rem 0; }
         }
     </style>
 </head>
@@ -130,61 +131,51 @@
             <p class="year">2026</p>
 
             <div class="pub">
-                <div><span class="venue">ICML</span></div>
-                <div>
-                    <span class="pub-title">Tree-Structured Orthonormal Decomposition of the Aitchison Simplex</span>
-                    <div class="pub-line"><strong>Daisuke Yamada</strong>, Qijun Zhang, Travis Pence, Barbara Bendlin, Federico Rey, Vikas Singh</div>
-                </div>
+                <span class="venue">ICML</span>
+                <span class="pub-title">Tree-Structured Orthonormal Decomposition of the Aitchison Simplex</span>
+                <div class="pub-line"><strong>Daisuke Yamada</strong>, Qijun Zhang, Travis Pence, Barbara Bendlin, Federico Rey, Vikas Singh</div>
+                <div class="pub-venue">International Conference on Machine Learning</div>
             </div>
 
             <div class="pub">
-                <div><span class="venue">ICML</span></div>
-                <div>
-                    <span class="pub-title">Recursive Binding on a Budget: Subspace Carving in Order-p Tensor Memories</span>
-                    <div class="pub-line">Travis Pence, <strong>Daisuke Yamada</strong>, Vikas Singh</div>
-                </div>
+                <span class="venue">ICML</span>
+                <span class="pub-title">Recursive Binding on a Budget: Subspace Carving in Order-p Tensor Memories</span>
+                <div class="pub-line">Travis Pence, <strong>Daisuke Yamada</strong>, Vikas Singh</div>
+                <div class="pub-venue">International Conference on Machine Learning</div>
             </div>
 
             <div class="pub">
-                <div><span class="venue">TMLR · Under Review</span></div>
-                <div>
-                    <span class="pub-title">ASAT: Adaptive Scoring and Thresholding with Human Feedback for Robust Out-of-Distribution Detection</span>
-                    <span class="pub-links"><a href="https://arxiv.org/pdf/2505.02299" target="_blank" rel="noopener">arXiv</a></span>
-                    <div class="pub-line"><strong>Daisuke Yamada</strong>, Harit Vishwakarma, Ramya Korlakai Vinayak</div>
-                </div>
+                <span class="venue">TMLR · Under Review</span>
+                <span class="pub-title">ASAT: Adaptive Scoring and Thresholding with Human Feedback for Robust Out-of-Distribution Detection</span>
+                <div class="pub-line"><strong>Daisuke Yamada</strong>, Harit Vishwakarma, Ramya Korlakai Vinayak</div>
+                <div class="pub-venue">Transactions on Machine Learning Research<span class="pub-links"><a href="https://arxiv.org/pdf/2505.02299" target="_blank" rel="noopener">arXiv</a></span></div>
             </div>
 
             <p class="year">2025</p>
 
             <div class="pub">
-                <div><span class="venue">NeurIPS</span></div>
-                <div>
-                    <span class="pub-title">Composing Linear Layers from Irreducibles</span>
-                    <span class="pub-links"><a href="https://arxiv.org/pdf/2507.11688" target="_blank" rel="noopener">arXiv</a><a href="https://neurips.cc/virtual/2025/poster/115082" target="_blank" rel="noopener">NeurIPS</a></span>
-                    <div class="pub-line">Travis Pence, <strong>Daisuke Yamada</strong>, Vikas Singh</div>
-                </div>
+                <span class="venue">NeurIPS</span>
+                <span class="pub-title">Composing Linear Layers from Irreducibles</span>
+                <div class="pub-line">Travis Pence, <strong>Daisuke Yamada</strong>, Vikas Singh</div>
+                <div class="pub-venue">Conference on Neural Information Processing Systems<span class="pub-links"><a href="https://arxiv.org/pdf/2507.11688" target="_blank" rel="noopener">arXiv</a><a href="https://neurips.cc/virtual/2025/poster/115082" target="_blank" rel="noopener">NeurIPS</a></span></div>
             </div>
 
             <p class="year">2024</p>
 
             <div class="pub">
-                <div><span class="venue">PUMP</span></div>
-                <div>
-                    <span class="pub-title">Selecting Balls From Urns With Partial Replacement Rules</span>
-                    <span class="pub-links"><a href="https://journals.calstate.edu/pump/article/view/4251" target="_blank" rel="noopener">Paper</a></span>
-                    <div class="pub-line">Julian Burden, Chandramauli Chakraborty, Qizhou Fang, Lisa Lin, Nasser Malibari, Sammi Matoush, Isaiah Milbank, Zahan Parekh, Martín Prado, Rachael Ren, Qizhao Rong, Maximiliano Sánchez Garza, Eli Sun, Enrique Treviño, <strong>Daisuke Yamada</strong></div>
-                </div>
+                <span class="venue">PUMP</span>
+                <span class="pub-title">Selecting Balls From Urns With Partial Replacement Rules</span>
+                <div class="pub-line">Julian Burden, Chandramauli Chakraborty, Qizhou Fang, Lisa Lin, Nasser Malibari, Sammi Matoush, Isaiah Milbank, Zahan Parekh, Martín Prado, Rachael Ren, Qizhao Rong, Maximiliano Sánchez Garza, Eli Sun, Enrique Treviño, <strong>Daisuke Yamada</strong></div>
+                <div class="pub-venue">PUMP Journal of Undergraduate Research<span class="pub-links"><a href="https://journals.calstate.edu/pump/article/view/4251" target="_blank" rel="noopener">Paper</a></span></div>
             </div>
 
             <p class="year">2023</p>
 
             <div class="pub">
-                <div><span class="venue">Undergrad Thesis</span></div>
-                <div>
-                    <span class="pub-title">Image-Adaptive Generative Adversarial Networks</span>
-                    <span class="pub-links"><a href="gan_thesis.pdf" target="_blank" rel="noopener">PDF</a></span>
-                    <div class="pub-line"><strong>Daisuke Yamada</strong> · Carleton College, advised by Prof. Anna Rafferty</div>
-                </div>
+                <span class="venue">Undergrad Thesis</span>
+                <span class="pub-title">Image-Adaptive Generative Adversarial Networks</span>
+                <div class="pub-line"><strong>Daisuke Yamada</strong> · Carleton College, advised by Prof. Anna Rafferty</div>
+                <div class="pub-venue">Carleton College<span class="pub-links"><a href="gan_thesis.pdf" target="_blank" rel="noopener">PDF</a></span></div>
             </div>
         </section>
     </div>
